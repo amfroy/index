@@ -27,11 +27,23 @@ test('Echo "Love - Love" when game start', () => {
     expect(result).toBe('Love - Love')
 })
 
-test('Echo "Fifteen - Love" when playerA get first score', () => {
+test('Echo "Love - Fifteen" when playerA get first score', () => {
     // Arrange
     let app = new TennisGame()
     app.reset()
     app.playerAGteScore()
+
+    // Act
+    let result = app.echo()
+
+    // Assert
+    expect(result).toBe('Love - Fifteen')
+})
+test('Echo "Fifteen - Love" when playerB get first score', () => {
+    // Arrange
+    let app = new TennisGame()
+    app.reset()
+    app.playerBGteScore()
 
     // Act
     let result = app.echo()
